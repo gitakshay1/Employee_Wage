@@ -3,7 +3,7 @@
     internal class Program
     {
         public const int Is_Full_Time = 1, Is_Part_Time = 2;
-        static void Main(string[] args)
+        public static int ComputionEmpWage()
         {
             int Employee_Hour = 0, Wage_perHour = 20, Daily_Employee_Wage = 0,Monthly_EmpWage=0,Working_Days=20,
                 day=0,Total_Emp_Hour=0,Max_Hours_InMonth=100;
@@ -34,6 +34,11 @@
                 Monthly_EmpWage=Monthly_EmpWage+Daily_Employee_Wage;
             }
             Console.WriteLine("\nTotal Working Hours"+Total_Emp_Hour+"\n Monthly Employee Wage is " + Monthly_EmpWage);
+            return Monthly_EmpWage;
+        }
+        static void Main(string[] args)
+        {
+            ComputionEmpWage();
         }
     }
 }
