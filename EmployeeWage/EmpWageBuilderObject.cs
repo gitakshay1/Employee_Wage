@@ -17,9 +17,9 @@ namespace EmployeeWage
         {
            this.cmpanyEmpWagesArray = new CmpanyEmpWage[5];
         }
-        public void addCompanyWage(string company, int wage_perHour, int working_Days, int max_Hours_InMonth)
+        public void addCompanyWage(string Company, int Wage_perHour, int Working_Days, int Max_Hours_InMonth)
         {
-            cmpanyEmpWagesArray[this.numOfCompany] = new CmpanyEmpWage(company, wage_perHour, working_Days, max_Hours_InMonth);
+            cmpanyEmpWagesArray[this.numOfCompany] = new CmpanyEmpWage(Company, Wage_perHour, Working_Days, Max_Hours_InMonth);
             numOfCompany++;
         }
         public void ComputeEmpWage()
@@ -32,12 +32,12 @@ namespace EmployeeWage
         }
         public int ComputeEmpWage(CmpanyEmpWage cmpanyEmpWage)
         {
-            int Employee_Hour = 0, Monthly_EmpWage = 0,
-                day = 0, Total_Emp_Hour = 0;
+            int Employee_Hour = 0, totalWorkingDays = 0,
+                 Total_Emp_Hour = 0;
             Random Randm = new Random();
-            while (Total_Emp_Hour <=  cmpanyEmpWage.max_Hours_InMonth && day < this.Working_Days)
+            while (Total_Emp_Hour <=  cmpanyEmpWage.Max_Hours_InMonth && totalWorkingDays < cmpanyEmpWage.Working_Days)
             {
-                day++;
+                totalWorkingDays++;
                 int empCheck = Randm.Next(0, 3);
                 switch (empCheck)
                 {
@@ -56,10 +56,9 @@ namespace EmployeeWage
 
                 }
                 Total_Emp_Hour +=Employee_Hour;
-                Console.WriteLine("Working Days #" + day + " Employee Hours are " + Employee_Hour);
+                Console.WriteLine("Working Days #" + totalWorkingDays + " Employee Hours are " + Employee_Hour);
             }
-            Monthly_EmpWage = this.Wage_perHour * Total_Emp_Hour;
-            Console.WriteLine("\n Monthly Employee Wage for Company " + Company + " is " + Monthly_EmpWage);
+            return Total_Emp_Hour * cmpanyEmpWage.Wage_perHour;
 
         }
         
