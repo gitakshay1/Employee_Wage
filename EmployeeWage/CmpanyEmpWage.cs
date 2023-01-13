@@ -16,6 +16,7 @@ namespace EmployeeWage
             this.Wage_perHour = Wage_perHour;
             this.Working_Days = Working_Days;
             this.Max_Hours_InMonth = Max_Hours_InMonth;
+            this.Monthly_EmpWage = 0;
            
         }
         public void setTotalEmpWage(int Monthly_EmpWage)

@@ -6,10 +6,11 @@ namespace Employee_Wage
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
             empWageBuilder.addCompanyWage("Tata", 14, 24, 104);
             empWageBuilder.addCompanyWage("Mhaindra", 18, 25, 108);
             empWageBuilder.ComputeEmpWage();
+            Console.WriteLine("Total Wage for Tata Company :" + empWageBuilder.getTotalWage("Tata"));
         }
     }
 }
